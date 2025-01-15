@@ -11,7 +11,7 @@
         forget.
       </p>
     </div>
-    <div class="flex items-center gap-5 sm:gap-9">
+    <div class="flex flex-wrap items-center gap-5 sm:gap-9">
       <div class="bg-secondary">
         <a
           href="#downloads"
