@@ -7,6 +7,8 @@
     --background: 0, 0%, 97%;
     --primary: 205, 67%, 40%;
     --primary-darker: 208, 65%, 50%;
+    --scrollbar-thumb: var(--subtle);
+    --scrollbar-track: var(--background);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -39,4 +41,5 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: hsla(var(--scrollbar-thumb), 30%) hsl(var(--scrollbar-track));
 }
