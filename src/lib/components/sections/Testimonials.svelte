@@ -110,7 +110,7 @@
           </svg>
         </button>
       </div>
-      <div class="grid grid-cols-8 lg:grid-cols-7 gap-10 grow">
+      <div class="grid grid-cols-8 lg:grid-cols-7 grow">
         {#key index}
           <div
             class="col-span-5 lg:col-span-4 flex h-fit"
