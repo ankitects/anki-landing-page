@@ -3,10 +3,10 @@
 @layer base {
   :root {
     --foreground: 248, 8%, 20%;
-    --subtle: 248, 8%, 20%;
-    --background: 0, 0%, 97%;
-    --primary: 205, 67%, 40%;
-    --primary-darker: 208, 65%, 50%;
+    --subtle: 0, 1%, 33%;
+    --background: 0, 0%, 100%;
+    --primary: 208, 65%, 55%;
+    --primary-darker: 208, 65%, 52%;
     --scrollbar-thumb: var(--subtle);
     --scrollbar-track: var(--background);
   }
@@ -16,8 +16,7 @@
       --foreground: 0, 0%, 100%;
       --subtle: 0, 0%, 85%;
       --background: 0, 0%, 3%;
-      --primary: 205, 67%, 70%;
-      --primary-darker: 208, 65%, 60%;
+      --primary: 205, 67%, 62%;
     }
   }
 
@@ -37,6 +36,7 @@
   --color-secondary: #968ca8;
   --color-neutral: hsla(var(--foreground), 70%);
   --color-error: #ff5449;
+  --color-subtle-surface: hsla(var(--subtle), 8%);
 }
 
 html {

@@ -58,7 +58,7 @@
   {/if}
 {/snippet}
 
-<section class="flex flex-col justify-center w-full py-5 sm:py-9 gap-14 xl:gap-20">
+<section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
   <DualHeader title="testimonials">
     {#snippet subtitle()}
       <p>See what people are saying about Anki.</p>

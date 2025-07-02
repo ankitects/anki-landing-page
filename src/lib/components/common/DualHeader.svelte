@@ -11,11 +11,9 @@
   const id = $derived(title.toLowerCase().replace(/\s/g, '-'));
 </script>
 
-<hgroup
-  class="my-12 mx-auto w-full flex flex-col text-center left items-center justify-center gap-4 px-4 md:max-w-[820px] scroll-mt-32 @container"
->
-  <h2 {id} class="text-[max(6cqw,_1.875em)] font-semibold capitalize leading-none">{title}</h2>
-  <div class="text-[max(2.5cqw,_1em)] text-subtle leading-snug">
+<hgroup class="relative mx-auto text-center md:max-w-2xl mt-12 mb-16 md:mb-24 scroll-mt-24">
+  <h2 {id} class="text-[2.5rem] leading-[135%] tracking-tight font-semibold capitalize">{title}</h2>
+  <div class="text-xl text-subtle leading-[135%] mt-3 font-medium">
     {@render subtitle()}
   </div>
 </hgroup>

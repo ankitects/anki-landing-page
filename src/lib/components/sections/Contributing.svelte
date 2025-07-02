@@ -30,7 +30,7 @@
   ];
 </script>
 
-<section class="flex flex-col justify-center w-full py-5 sm:py-9 gap-14 xl:gap-20">
+<section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
   <DualHeader title="contributing">
     {#snippet subtitle()}
       <p>
@@ -39,9 +39,7 @@
       </p>
     {/snippet}
   </DualHeader>
-  <div
-    class="grid grid-cols-1 md:grid-cols-3 border-2 md:divide-x-2 divide-black/[13%] dark:divide-white/[13%] border-black/[13%] dark:border-white/[13%]"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
     {#each contributingCards as { title, description, href }}
       <LinkCard {title} {description} {href} />
     {/each}

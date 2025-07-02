@@ -18,6 +18,6 @@
 </svelte:head>
 
 <Navigation />
-<main class="mx-auto px-8 max-w-348">
+<main class="md:pt-38 md:px-12 pt-24 px-5">
   {@render children?.()}
 </main>

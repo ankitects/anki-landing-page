@@ -12,11 +12,9 @@
 
 <a
   {href}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group space-y-10 px-9 py-6 hover:bg-linear-to-r from-secondary/90 to-primary/90"
+  class="group flex flex-col justify-between px-9 py-6 hover:bg-subtle-surface rounded-lg border border-subtle/12"
 >
-  <div class="flex items-start justify-between">
+  <div class="flex items-start justify-between mb-5">
     <h3 class="flex flex-row items-center text-2xl capitalize font-medium">
       {title}&nbsp;&nbsp;&nbsp;<img
         src="{base}/icons/link-arrow.svg"

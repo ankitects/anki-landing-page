@@ -11,7 +11,7 @@
   }
 </script>
 
-<section class="flex flex-col justify-center w-full py-5 sm:py-9 gap-14">
+<section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
   <DualHeader title="downloads">
     {#snippet subtitle()}
       <p>
@@ -19,8 +19,6 @@
           href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
           aria-label="Anki Manual: Installing and Upgrading"
           class="text-primary hover:opacity-80"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           installation guide
         </a>.
@@ -37,8 +35,6 @@
           If you have a <a
             href="https://support.apple.com/en-au/116943"
             class="text-primary hover:opacity-80"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             recent Mac
           </a>, pick the Apple Silicon version for better performance and battery life. Older Macs
@@ -119,8 +115,6 @@
       >
         <a
           href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
-          target="_blank"
-          rel="noopener noreferrer"
           class="flex items-center gap-1 w-fit font-medium text-primary hover:opacity-60"
         >
           Installation Guide
@@ -141,8 +135,6 @@
         </a>
         <a
           href="https://github.com/ankitects/anki/releases"
-          target="_blank"
-          rel="noopener noreferrer"
           class="flex items-center gap-1 w-fit font-medium text-primary hover:opacity-60"
         >
           Change Notes & Older Releases

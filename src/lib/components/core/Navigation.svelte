@@ -13,28 +13,41 @@
     { text: 'Add-Ons', href: 'https://ankiweb.net/shared/addons' },
     { text: 'Shared Decks', href: 'https://ankiweb.net/shared/decks' },
   ];
+
+  let scrollY = $state(0);
+
+  let isMenuOpen = $state(false);
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+  };
+  const closeMenu = () => {
+    isMenuOpen = false;
+  };
 </script>
 
-<header
-  class="bg-background/90 backdrop-blur-lg sticky inset-x-0 top-0 z-10 border-b border-foreground/[13%]"
->
-  <div class="max-w-348 mx-auto">
-    <div class="flex h-16 items-center justify-between gap-8 px-6">
+<svelte:window bind:scrollY />
+
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div
+    class="mx-auto w-full max-w-[1082px] px-6 md:px-12 flex items-center transition-all duration-500 ease-[linear(0,_0.178_4.5%,_0.336_9%,_0.477_13.6%,_0.604_18.4%,_0.713_23.3%,_0.762_25.8%,_0.806_28.3%,_0.847_30.9%,_0.884_33.5%,_0.917_36.2%,_0.946_38.9%,_0.969_41.3%,_0.989_43.8%,_1.006_46.4%,_1.02_49%,_1.032_51.7%,_1.041_54.5%,_1.048_57.3%,_1.051_60.3%,_1.053_65%,_1.048_70.2%,_1.039_75.7%,_1.008_91%,_1.002_95.7%,_1)] border-subtle/12 bg-background"
+    class:pt-1={scrollY < 12}
+    class:md:pt-6={scrollY < 12}
+    class:border-b={scrollY > 6}
+  >
+    <div class="flex h-14 items-center justify-between w-full">
       <div class="flex gap-4">
         <a
           href="#top"
-          class="flex items-center gap-2 shrink-0 [&>*]:pointer-events-none [&>*]:select-none"
+          class="flex items-center gap-1.5 shrink-0 [&>*]:pointer-events-none [&>*]:select-none"
         >
-          <img src="{base}/logo.svg" alt="Logo" class="size-7" />
-          <span class="font-bold text-foreground text-xl leading-none tracking-widest"> Anki </span>
+          <img src="{base}/logo.svg" alt="Logo" class="size-6" />
+          <span class="font-semibold text-foreground text-xl tracking-wide">Anki</span>
         </a>
       </div>
       <div class="flex items-center h-full max-[832px]:hidden pr-8">
         {#each options as { text, href }}
           <a
             class="px-3 select-none transition-all duration-150 ease-out flex items-center text-foreground h-full hover:shadow-[inset_0_-2px_var(--color-primary)]"
-            target="_blank"
-            rel="noopener noreferrer"
             {href}
           >
             {text}
@@ -43,9 +56,7 @@
         <a
           aria-label="GitHub repository"
           href="https://github.com/ankitects/anki"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-3 py-2 group"
+          class="px-3 py-2 group pr-6"
         >
           <svg viewBox="0 0 20 20" class="size-5 fill-foreground group-hover:fill-primary">
             <path
@@ -56,7 +67,7 @@
         </a>
         <a
           href="#downloads"
-          class="ml-3 rounded hover:opacity-80 bg-gradient-to-r from-primary-darker to-primary text-background h-12 flex items-center px-4 font-bold leading-none cursor-pointer transition-all duration-300 ease-out"
+          class="rounded-[2rem] px-4 py-1.5 font-semibold tracking-tight transition-all duration-100 ease-out bg-gradient-to-r from-primary-darker to-primary text-background hover:opacity-80"
         >
           Download Anki
         </a>
@@ -66,7 +77,7 @@
           type="button"
           class="relative inline-grid size-7 place-items-center rounded-md text-foreground"
           aria-label="Navigation"
-          popovertarget="menu"
+          onclick={toggleMenu}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,63 +92,61 @@
             />
           </svg>
         </button>
-        <div
-          id="menu"
-          popover="auto"
-          role="menu"
-          class="fixed top-0 left-0 size-full bg-background z-20 p-20"
-        >
-          <button
-            popovertarget="menu"
-            popovertargetaction="hide"
-            aria-label="Close menu"
-            class="text-foreground absolute top-6 right-6"
+        {#if isMenuOpen}
+          <div
+            id="menu"
+            role="menu"
+            class="fixed top-0 left-0 size-full bg-background z-20 p-20 menu-open"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-8"
+            <button
+              onclick={closeMenu}
+              aria-label="Close menu"
+              class="text-foreground absolute top-6 right-6"
             >
-              <path
-                fill-rule="evenodd"
-                d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-          <nav class="flex flex-col gap-4 h-full">
-            {#each options as { text, href }}
-              <a
-                class="w-fit select-none transition-all gap-1 duration-150 ease-out text-3xl flex items-center text-foreground hover:shadow-[inset_0_-2px_#7EBBE5]"
-                {href}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-8"
               >
-                {text}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  class="size-8"
+                <path
+                  fill-rule="evenodd"
+                  d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <nav class="flex flex-col gap-4 h-full">
+              {#each options as { text, href }}
+                <a
+                  class="w-fit select-none transition-all gap-1 duration-150 ease-out text-3xl flex items-center text-foreground hover:shadow-[inset_0_-2px_#7EBBE5]"
+                  {href}
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                  {text}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    class="size-8"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              {/each}
+              <a
+                href="#downloads"
+                onclick={closeMenu}
+                class="text-center mt-auto rounded hover:opacity-80 bg-gradient-to-r from-primary-darker to-primary text-background py-4 text-lg flex items-center justify-center font-semibold leading-none cursor-pointer transition-all duration-300 ease-out"
+              >
+                Download Anki
               </a>
-            {/each}
-            <a
-              href="#downloads"
-              onclick={() => {
-                document.getElementById('menu')?.hidePopover();
-              }}
-              class="text-center mt-auto rounded hover:opacity-80 bg-gradient-to-r from-primary-darker to-primary text-background py-4 text-lg flex items-center justify-center font-semibold leading-none cursor-pointer transition-all duration-300 ease-out"
-            >
-              Download Anki
-            </a>
-          </nav>
-        </div>
+            </nav>
+          </div>
+        {/if}
       </div>
     </div>
   </div>
@@ -152,9 +161,7 @@
       opacity: 1;
     }
   }
-  #menu {
-    &:popover-open {
-      animation: fadeIn 0.3s forwards ease-in;
-    }
+  .menu-open {
+    animation: fadeIn 0.3s forwards ease-in;
   }
 </style>
