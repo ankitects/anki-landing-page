@@ -12,7 +12,7 @@ const fluentHandler: Handle = async ({ event, resolve }) => {
 
 const preloadFonts: Handle = async ({ event, resolve }) => {
   const response = await resolve(event, {
-    preload: ({ type }) => type === 'font'
+    preload: ({ type }) => type === 'font',
   });
   return response;
 };

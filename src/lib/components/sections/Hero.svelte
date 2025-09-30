@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Localized } from '@nubolab-ffwd/svelte-fluent';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 </script>
 
 <div class="relative z-1 mx-auto w-[min(100%,986px)] min-h-64">
@@ -35,7 +35,9 @@
   </h1>
   <div>
     <p class="max-w-lg text-xl/snug">
-      <Localized id="Anki-is-a-flashcard-program-that-helps-you-spend-more-time-on-challenging-material-and-less-on-what-you-already-know" />
+      <Localized
+        id="Anki-is-a-flashcard-program-that-helps-you-spend-more-time-on-challenging-material-and-less-on-what-you-already-know"
+      />
     </p>
   </div>
   <div class="mt-7">
