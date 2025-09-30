@@ -9,7 +9,7 @@
       aria-label="Anki Manual: Background"
       class="text-sm tracking-tight inline-flex items-center gap-2 rounded-[6rem] bg-subtle-surface w-fit px-3 py-1.5 hover:opacity-80"
     >
-      <span class="font-medium"><Localized id="powerfull-intelligent-flashcards" /></span>
+      <span class="font-medium"><Localized id="powerful-intelligent-flashcards" /></span>
       <svg height="3" width="3" xmlns="http://www.w3.org/2000/svg">
         <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" />
       </svg>
