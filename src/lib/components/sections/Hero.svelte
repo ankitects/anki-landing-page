@@ -14,7 +14,7 @@
         <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" />
       </svg>
       <div class="flex items-center gap-1">
-        Learn more
+        <Localized id="learn-more" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -31,12 +31,11 @@
     </a>
   </div>
   <h1 class="text-[2.5rem]/12 md:text-5xl/14 font-bold mb-4 text-black dark:text-foreground">
-    Remembering is easier with <span class="dark:text-primary">Anki</span>
+    <Localized id="remembering-is-easier-with" /> <span class="dark:text-primary">Anki</span>
   </h1>
   <div>
     <p class="max-w-lg text-xl/snug">
-      Anki is a flashcard program that helps you spend more time on challenging material, and less
-      on what you already know.
+      <Localized id="Anki-is-a-flashcard-program-that-helps-you-spend-more-time-on-challenging-material-and-less-on-what-you-already-know" />
     </p>
   </div>
   <div class="mt-7">
@@ -48,7 +47,7 @@
         document.querySelector('#downloads')?.scrollIntoView({ behavior: 'smooth' });
       }}
     >
-      <span class="font-semibold text-lg tracking-tight">Download Anki</span>
+      <span class="font-semibold text-lg tracking-tight"><Localized id="download-anki" /></span>
       <svg xmlns="http://www.w3.org/2000/svg" class="size-5">
         <path
           d="M4.5 10H16M16 10L11.5 5.5M16 10L11.5 14.5"
