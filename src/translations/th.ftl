@@ -1,0 +1,1 @@
+powerfull-intelligent-flashcards = ทรงพลัง
