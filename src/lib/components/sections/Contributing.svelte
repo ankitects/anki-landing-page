@@ -12,20 +12,17 @@
   const contributingCards: ContributingLinkCard[] = [
     {
       title: 'open-source',
-      description:
-        'open-source-description',
+      description: 'open-source-description',
       href: 'https://github.com/ankitects/anki/blob/main/docs/contributing.md',
     },
     {
       title: 'share-decks',
-      description:
-        'share-decks-description',
+      description: 'share-decks-description',
       href: 'https://docs.ankiweb.net/contrib#sharing-decks-publicly',
     },
     {
       title: 'translate-anki',
-      description:
-        'translate-anki-description',
+      description: 'translate-anki-description',
       href: 'https://translating.ankiweb.net/intro.html',
     },
   ];
@@ -35,7 +32,9 @@
   <DualHeader title="contributing">
     {#snippet subtitle()}
       <p>
-       <Localized id="anki-is-a-community-project-where-anyone-can-make-contributions-to-help-improve-everyone-experience" />
+        <Localized
+          id="anki-is-a-community-project-where-anyone-can-make-contributions-to-help-improve-everyone-experience"
+        />
       </p>
     {/snippet}
   </DualHeader>

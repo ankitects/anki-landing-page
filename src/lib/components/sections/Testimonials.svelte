@@ -14,20 +14,17 @@
 
   const testimonials: Testimonial[] = [
     {
-      quote:
-        'quote-nielsen',
+      quote: 'quote-nielsen',
       author: 'Michael A. Nielsen, "Augmenting Long-term Memory"',
       link: 'https://augmentingcognition.com/ltm.html',
     },
     {
-      quote:
-        'quote-lawson',
+      quote: 'quote-lawson',
       author: 'K. M. Lawson, "Anki All The Way"',
       link: 'https://huginn.net/foolsworkshop/reviews/index.html%3fp=124.html',
     },
     {
-      quote:
-        "quote-keldin",
+      quote: 'quote-keldin',
       author: 'Keldin, via Email',
     },
   ];

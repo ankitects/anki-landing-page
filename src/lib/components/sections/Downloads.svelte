@@ -144,7 +144,9 @@
       <div class="col-span-1 md:col-span-5 mb-6 md:mb-0 md:pr-8">
         <h3 class="text-2xl font-medium capitalize md:text-3xl">Mobile</h3>
         <p class="mt-4 leading-snug text-subtle">
-          <Localized id="ankimobile-is-the-official-ios-app-and-all-purchases-help-fund-anki-development" />
+          <Localized
+            id="ankimobile-is-the-official-ios-app-and-all-purchases-help-fund-anki-development"
+          />
         </p>
       </div>
       <div class="col-span-1 md:col-span-7 grid divide-y divide-foreground/[13%]">

@@ -16,8 +16,7 @@
     {
       id: 'synchronization',
       title: 'synchronization',
-      description:
-        'synchronization-description',
+      description: 'synchronization-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
