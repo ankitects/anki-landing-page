@@ -29,7 +29,7 @@
 </script>
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="contributing">
+  <DualHeader id="contributing">
     {#snippet subtitle()}
       <p>
         <Localized

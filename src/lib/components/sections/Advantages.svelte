@@ -100,7 +100,7 @@
 {/snippet}
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="advantages">
+  <DualHeader id="advantages">
     {#snippet subtitle()}
       <p><Localized id="here-are-a-few-reasons-why-users-love-anki" /></p>
     {/snippet}

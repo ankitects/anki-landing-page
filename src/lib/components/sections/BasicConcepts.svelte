@@ -5,7 +5,7 @@
 </script>
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="basic-concepts">
+  <DualHeader id="basic-concepts">
     {#snippet subtitle()}
       <p><Localized id="anki-supports-complex-workflows-but-getting-started-is-easy" /></p>
     {/snippet}

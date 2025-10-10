@@ -13,7 +13,7 @@
 </script>
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="downloads">
+  <DualHeader id="downloads">
     {#snippet subtitle()}
       <p>
         <Localized id="choose-the-correct-download-for-your-platform-for-details-see-the" /><a

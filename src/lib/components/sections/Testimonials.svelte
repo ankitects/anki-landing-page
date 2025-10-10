@@ -57,7 +57,7 @@
 {/snippet}
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="testimonials">
+  <DualHeader id="testimonials">
     {#snippet subtitle()}
       <p><Localized id="see-what-people-are-saying-about-anki" /></p>
     {/snippet}
