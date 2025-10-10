@@ -1,6 +1,7 @@
 <script lang="ts">
   import DualHeader from '$lib/components/common/DualHeader.svelte';
   import LinkCard from '$lib/components/common/LinkCard.svelte';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 
   type ContributingLinkCard = {
     title: string;
@@ -10,21 +11,21 @@
 
   const contributingCards: ContributingLinkCard[] = [
     {
-      title: 'open source',
+      title: 'open-source',
       description:
-        'If you know how to code you could help maintain Anki or create new add-ons/features.',
+        'open-source-description',
       href: 'https://github.com/ankitects/anki/blob/main/docs/contributing.md',
     },
     {
-      title: 'share decks',
+      title: 'share-decks',
       description:
-        "Sharing your deck can make it easier for others to start learning what you're studying.",
+        'share-dekcs-description',
       href: 'https://docs.ankiweb.net/contrib#sharing-decks-publicly',
     },
     {
-      title: 'translate anki',
+      title: 'translate-anki',
       description:
-        'Help with the efforts to translate Anki so it can become more accessible to everyone.',
+        'translate-anki-description',
       href: 'https://translating.ankiweb.net/intro.html',
     },
   ];
@@ -34,8 +35,7 @@
   <DualHeader title="contributing">
     {#snippet subtitle()}
       <p>
-        Anki is a community project where anyone can make contributions to help improve everyone's
-        experience.
+       <Localized id="anki-is-a-community-project-where-anyone-can-make-contributions-to-help-improve-everyone-experience" />
       </p>
     {/snippet}
   </DualHeader>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import DualHeader from '$lib/components/common/DualHeader.svelte';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
   import { cubicIn } from 'svelte/easing';
   import { fade } from 'svelte/transition';
 
@@ -14,19 +15,19 @@
   const testimonials: Testimonial[] = [
     {
       quote:
-        'The single biggest change that Anki brings about is that it means memory is no longer a haphazard event, to be left to chance. Rather, it guarantees I will remember something, with minimal effort. That is, Anki makes memory a choice.',
+        'quote-nielsen',
       author: 'Michael A. Nielsen, "Augmenting Long-term Memory"',
       link: 'https://augmentingcognition.com/ltm.html',
     },
     {
       quote:
-        'No other application [...] comes remotely close to Anki in terms of the number and power of features, flexibility in study, or implementation of spaced repetition.',
+        'quote-lawson',
       author: 'K. M. Lawson, "Anki All The Way"',
       link: 'https://huginn.net/foolsworkshop/reviews/index.html%3fp=124.html',
     },
     {
       quote:
-        "... consistent use of Anki has opened more doors for me intellectually than I could have imagined two years ago. And being a poor student, I'll be forever grateful that you've provided this software open-source and free of charge.",
+        "quote-keldin",
       author: 'Keldin, via Email',
     },
   ];
@@ -61,7 +62,7 @@
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
   <DualHeader title="testimonials">
     {#snippet subtitle()}
-      <p>See what people are saying about Anki.</p>
+      <p><Localized id="see-what-people-are-saying-about-anki" /></p>
     {/snippet}
   </DualHeader>
   <div>
@@ -146,7 +147,7 @@
               />
             </svg>
             <span class="dark:text-background font-medium text-lg lg:text-3xl h-fit">
-              {testimonials[index].quote}
+              <Localized id={testimonials[index].quote} />
             </span>
           </div>
         {/key}

@@ -3,6 +3,7 @@
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 
   onMount(() => {
     if (browser && $page.status === 404) {
@@ -13,7 +14,7 @@
 
 <div class="error-container">
   <h1>{$page.status}: {$page.error?.message || 'Not Found'}</h1>
-  <p>Redirecting to homepage...</p>
+  <p><Localized id="redirecting-to-homepage" />...</p>
 </div>
 
 <style>

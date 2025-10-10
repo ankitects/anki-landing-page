@@ -1,5 +1,6 @@
 <script lang="ts">
   import DualHeader from '$lib/components/common/DualHeader.svelte';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 
   const ankiVersion = '25.09';
   const winMinVer = '10';
@@ -15,12 +16,12 @@
   <DualHeader title="downloads">
     {#snippet subtitle()}
       <p>
-        Choose the correct download for your platform. For details, see the <a
+        <Localized id="choose-the-correct-download-for-your-platform-for-details-see-the" /><a
           href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
           aria-label="Anki Manual: Installing and Upgrading"
           class="text-primary hover:opacity-80"
         >
-          installation guide
+          <Localized id="installation-guide" />
         </a>.
       </p>
     {/snippet}
@@ -30,9 +31,9 @@
       class="w-full grid grid-cols-1 md:grid-cols-12 border-t border-foreground/[13%] py-[max(3.5dvw,_2em)]"
     >
       <div class="col-span-1 md:col-span-5 mb-6 md:mb-0 md:pr-8">
-        <h3 class="text-2xl font-medium capitalize md:text-3xl">Desktop</h3>
+        <h3 class="text-2xl font-medium capitalize md:text-3xl"><Localized id="desktop" /></h3>
         <p class="mt-4 leading-snug text-subtle">
-          The free computer version is available for all major platforms.
+          <Localized id="the-free-computer-version-is-available-for-all-major-platforms" />
         </p>
       </div>
       <div class="col-span-1 md:col-span-7 grid divide-y divide-foreground/[13%]">
@@ -99,7 +100,7 @@
           href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
           class="flex items-center gap-1 w-fit font-medium text-primary hover:opacity-60"
         >
-          Installation Guide
+          <Localized id="installation-guide-link" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -119,7 +120,7 @@
           href="https://github.com/ankitects/anki/releases"
           class="flex items-center gap-1 w-fit font-medium text-primary hover:opacity-60"
         >
-          Change Notes & Older Releases
+          <Localized id="change-notes-and-older-releases" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -143,7 +144,7 @@
       <div class="col-span-1 md:col-span-5 mb-6 md:mb-0 md:pr-8">
         <h3 class="text-2xl font-medium capitalize md:text-3xl">Mobile</h3>
         <p class="mt-4 leading-snug text-subtle">
-          AnkiMobile is the official iOS app and all purchases help fund Anki's development.
+          <Localized id="ankimobile-is-the-official-ios-app-and-all-purchases-help-fund-anki-development" />
         </p>
       </div>
       <div class="col-span-1 md:col-span-7 grid divide-y divide-foreground/[13%]">
