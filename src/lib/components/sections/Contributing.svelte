@@ -19,7 +19,7 @@
     {
       title: 'share-decks',
       description:
-        'share-dekcs-description',
+        'share-decks-description',
       href: 'https://docs.ankiweb.net/contrib#sharing-decks-publicly',
     },
     {

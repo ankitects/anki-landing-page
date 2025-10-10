@@ -10,7 +10,7 @@ docs-menu = Docs
 forums-menu = Forums
 ankiweb-menu = AnkiWeb
 add-ons-menu = Add-Ons
-shared-decks-menu = Shared Dekcs
+shared-decks-menu = Shared Decks
 
 # DualHeader
 advantages = Advantages
@@ -52,7 +52,7 @@ reviews-description = When you're ready, start reviewing your flashcards. Rate y
 open-source = Open Source
 open-source-description = If you know how to code you could help maintain Anki or create new add-ons/features.
 share-decks = Share Decks
-share-dekcs-description = Sharing your deck can make it easier for others to start learning what you're studying.
+share-decks-description = Sharing your deck can make it easier for others to start learning what you're studying.
 translate-anki = Translate Anki
 translate-anki-description = Help with the efforts to translate Anki so it can become more accessible to everyone.
 

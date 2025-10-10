@@ -51,7 +51,7 @@ reviews-description =
 open-source = 
 open-source-description = 
 share-decks = 
-share-dekcs-description = 
+share-decks-description = 
 translate-anki = 
 translate-anki-description = 
 
