@@ -15,12 +15,12 @@ export function generateBundles(locale: string): FluentBundle[] {
   const bundles: FluentBundle[] = [];
   const bundle = new FluentBundle(locale);
   bundle.addResource(resources[locale]);
-  bundles.push(bundle)
+  bundles.push(bundle);
 
   // English bundle fallback
-  const bundleEn = new FluentBundle('en')
-  bundleEn.addResource(resourcesEn)
-  bundles.push(bundleEn)
+  const bundleEn = new FluentBundle('en');
+  bundleEn.addResource(resourcesEn);
+  bundles.push(bundleEn);
   return bundles;
 }
 
