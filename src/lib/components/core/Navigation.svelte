@@ -1,5 +1,6 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 
   type MenuOption = {
     href: string;
@@ -7,11 +8,11 @@
   };
 
   const options: MenuOption[] = [
-    { text: 'Docs', href: 'https://docs.ankiweb.net/' },
-    { text: 'Forums', href: 'https://forums.ankiweb.net/' },
-    { text: 'AnkiWeb', href: 'https://ankiweb.net/' },
-    { text: 'Add-Ons', href: 'https://ankiweb.net/shared/addons' },
-    { text: 'Shared Decks', href: 'https://ankiweb.net/shared/decks' },
+    { text: 'docs-menu', href: 'https://docs.ankiweb.net/' },
+    { text: 'forums-menu', href: 'https://forums.ankiweb.net/' },
+    { text: 'ankiweb-menu', href: 'https://ankiweb.net/' },
+    { text: 'add-ons-menu', href: 'https://ankiweb.net/shared/addons' },
+    { text: 'shared-decks-menu', href: 'https://ankiweb.net/shared/decks' },
   ];
 
   let scrollY = $state(0);
@@ -50,7 +51,7 @@
             class="px-3 select-none transition-all duration-150 ease-out flex items-center text-foreground h-full hover:shadow-[inset_0_-2px_var(--color-primary)]"
             {href}
           >
-            {text}
+            <Localized id={text} />
           </a>
         {/each}
         <a
@@ -69,7 +70,7 @@
           href="#downloads"
           class="rounded-[2rem] px-4 py-1.5 font-semibold tracking-tight transition-all duration-100 ease-out bg-gradient-to-r from-primary-darker to-primary text-background hover:opacity-80"
         >
-          Download Anki
+          <Localized id="download-anki" />
         </a>
       </div>
       <div class="flex items-center gap-2.5 min-[832px]:hidden">
@@ -142,7 +143,7 @@
                 onclick={closeMenu}
                 class="text-center mt-auto rounded hover:opacity-80 bg-gradient-to-r from-primary-darker to-primary text-background py-4 text-lg flex items-center justify-center font-semibold leading-none cursor-pointer transition-all duration-300 ease-out"
               >
-                Download Anki
+                <Localized id="download-anki" />
               </a>
             </nav>
           </div>

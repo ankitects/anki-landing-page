@@ -3,12 +3,12 @@
   import '../app.css';
   import Navigation from '$lib/components/core/Navigation.svelte';
   import { base } from '$app/paths';
+  import { initFluentContext } from '@nubolab-ffwd/svelte-fluent';
+  import type { PageData } from './$types';
+  import type { Snippet } from 'svelte';
 
-  interface Props {
-    children?: import('svelte').Snippet;
-  }
-
-  let { children }: Props = $props();
+  let { data, children }: { data: PageData; children: Snippet } = $props();
+  initFluentContext(() => data.fluent);
 </script>
 
 <svelte:head>
@@ -19,5 +19,5 @@
 
 <Navigation />
 <main class="md:pt-38 md:px-12 pt-24 px-5">
-  {@render children?.()}
+  {@render children()}
 </main>

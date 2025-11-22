@@ -12,6 +12,9 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@fluent/bundle": "^0.19.1",
+    "@fluent/langneg": "^0.7.0",
+    "@nubolab-ffwd/svelte-fluent": "^1.0.5",
     "@sveltejs/adapter-auto": "^3.3.1",
     "@sveltejs/adapter-static": "^3.0.6",
     "@sveltejs/kit": "^2.8.5",
@@ -34,6 +37,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.1.1",
-    "@tailwindcss/vite": "^4.0.1"
+    "@tailwindcss/vite": "^4.0.1",
+    "jsdom": "26"
   }
 }

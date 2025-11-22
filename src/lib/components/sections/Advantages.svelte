@@ -1,5 +1,6 @@
 <script lang="ts">
   import DualHeader from '$lib/components/common/DualHeader.svelte';
+  import { Localized } from '@nubolab-ffwd/svelte-fluent';
 
   interface Advantage {
     id: string;
@@ -14,9 +15,8 @@
   const advantages: Advantage[] = [
     {
       id: 'synchronization',
-      title: 'Synchronization',
-      description:
-        'The free AnkiWeb synchronization service lets you sync your cards across devices.',
+      title: 'synchronization',
+      description: 'synchronization-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
@@ -26,8 +26,8 @@
     },
     {
       id: 'media-support',
-      title: 'Media Support',
-      description: 'Audio, images, videos, and scientific markup can be used in your flashcards.',
+      title: 'media-support',
+      description: 'media-support-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
@@ -37,8 +37,8 @@
     },
     {
       id: 'customization',
-      title: 'Customization',
-      description: 'Easily change your flashcard layouts and the timing of their reviews.',
+      title: 'customization',
+      description: 'customization-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
@@ -51,8 +51,8 @@
     },
     {
       id: 'optimization',
-      title: 'Optimization',
-      description: 'Anki can handle decks of 100,000+ cards with no problems.',
+      title: 'optimization',
+      description: 'optimization-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
@@ -62,8 +62,8 @@
     },
     {
       id: 'add-ons',
-      title: 'Add-ons',
-      description: 'Install add-ons to extend Anki with new features and functionality.',
+      title: 'add-ons',
+      description: 'add-ons-description',
       icon: {
         viewBox: '0 0 24 24',
         paths: [
@@ -93,16 +93,16 @@
           />
         {/each}
       </svg>
-      <h3 class="text-lg md:text-xl font-medium capitalize">{title}</h3>
+      <h3 class="text-lg md:text-xl font-medium capitalize"><Localized id={title} /></h3>
     </div>
-    <p class="text-subtle leading-snug md:text-lg tracking-wide">{description}</p>
+    <p class="text-subtle leading-snug md:text-lg tracking-wide"><Localized id={description} /></p>
   </div>
 {/snippet}
 
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
-  <DualHeader title="advantages">
+  <DualHeader id="advantages">
     {#snippet subtitle()}
-      <p>Here are a few reasons why users love Anki.</p>
+      <p><Localized id="here-are-a-few-reasons-why-users-love-anki" /></p>
     {/snippet}
   </DualHeader>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
