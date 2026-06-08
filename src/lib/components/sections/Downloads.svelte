@@ -46,12 +46,10 @@
         <div class="flex justify-between items-start py-3 md:px-5">
           <div class="flex items-center mt-2 gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6">
-              <path
-                fill="currentColor"
-                fill-rule="evenodd"
-                d="M3.005 12L3 6.408l6.8-.923v6.517H3.005ZM11 5.32L19.997 4v8H11zM20.067 13l-.069 8l-9.065-1.275L11 13zM9.8 19.58l-6.795-.931V13H9.8z"
-                clip-rule="evenodd"
-              />
+              <path d="M11.4799 2H2V11.4796H11.4799V2Z" fill="currentColor" />
+              <path d="M22 2H12.5201V11.4796H22V2Z" fill="currentColor" />
+              <path d="M11.4799 12.5204H2V22H11.4799V12.5204Z" fill="currentColor" />
+              <path d="M22 12.5204H12.5201V22H22V12.5204Z" fill="currentColor" />
             </svg>
             <h4 class="font-medium text-xl">Windows</h4>
           </div>
