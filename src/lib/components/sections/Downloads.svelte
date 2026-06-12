@@ -1,7 +1,7 @@
 <script lang="ts">
   import DualHeader from '$lib/components/common/DualHeader.svelte';
 
-  const ankiVersion = '26.05b2';
+  const ankiVersion = '26.05';
 
   function buildDownloadURL(platform: string, architecture: string, extension: string): string {
     return `https://github.com/ankitects/anki/releases/download/${ankiVersion}/anki-${ankiVersion}-${platform}-${architecture}.${extension}`;
