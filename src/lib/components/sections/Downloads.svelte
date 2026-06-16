@@ -86,14 +86,14 @@
               class="flex items-center gap-1 text-base font-medium text-right md:text-xl text-primary hover:opacity-60"
             >
               {@render downloadIcon()}
-              <span class="my-2">macOS 12+ (Apple Silicon)</span>
+              <span class="my-2">macOS 13+ (Apple Silicon)</span>
             </a>
             <a
               href={buildDownloadURL('mac', 'intel', 'dmg')}
               class="flex items-center gap-1 text-base font-medium text-right md:text-xl text-primary hover:opacity-60"
             >
               {@render downloadIcon()}
-              <span class="my-2">macOS 12+ (Intel)</span>
+              <span class="my-2">macOS 13+ (Intel)</span>
             </a>
           </div>
         </div>
