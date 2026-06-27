@@ -178,7 +178,17 @@
       <div class="col-span-1 md:col-span-5 mb-6 md:mb-0 md:pr-8">
         <h3 class="text-2xl font-medium capitalize md:text-3xl">Mobile</h3>
         <p class="mt-4 leading-snug text-subtle">
-          AnkiMobile is the official iOS app and all purchases help fund Anki's development. AnkiDroid, the Android app, is free.
+          AnkiMobile is the official iOS app and all purchases help fund Anki's development.
+        </p>
+        <p class="mt-4 leading-snug text-subtle">
+          AnkiDroid for Android is free and developed by contributors. All
+          <a
+            href={'https://opencollective.com/ankidroid'}
+            class="font-medium text-primary hover:opacity-60"
+          >
+            donations
+          </a>
+          help fund AnkiDroid's development.
         </p>
       </div>
       <div class="col-span-1 md:col-span-7 grid divide-y divide-foreground/[13%]">
