@@ -180,6 +180,16 @@
         <p class="mt-4 leading-snug text-subtle">
           AnkiMobile is the official iOS app and all purchases help fund Anki's development.
         </p>
+        <p class="mt-4 leading-snug text-subtle">
+          AnkiDroid for Android is free and developed by contributors. All
+          <a
+            href={'https://opencollective.com/ankidroid'}
+            class="font-medium text-primary hover:opacity-60"
+          >
+            donations
+          </a>
+          help fund AnkiDroid's development.
+        </p>
       </div>
       <div class="col-span-1 md:col-span-7 grid divide-y divide-foreground/[13%]">
         <div class="flex justify-between py-3 md:px-5">
