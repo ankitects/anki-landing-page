@@ -165,7 +165,7 @@
       </p>
 
       {#if typeof detected !== 'undefined'}
-        <div id="detected-platform" class="flex flex-col items-center gap-3 mt-8">
+        <div class="flex flex-col items-center gap-3 mt-8">
           <p class="font-medium text-xs text-neutral-400 uppercase">
             Detected: {detected[0].name} ({detected[0].arch})
           </p>
