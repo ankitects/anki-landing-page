@@ -175,6 +175,7 @@
           >
             {@render detected[1]()}
             Download for {detected[0].name}
+            {detected[0].version}
           </a>
           <p class="font-medium text-xs">Not your platform? See all options below</p>
         </div>
