@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import type { Snippet } from 'svelte';
 
-  type Platform = {
+  type GithubPlatform = {
     name: string;
     arch: string;
     version: string;
@@ -11,10 +11,15 @@
     downloadArch: string;
     downloadExt: string;
   };
+  type ExternalPlatform = {
+    name: string;
+    url: string;
+  };
+  type Platform = GithubPlatform | ExternalPlatform;
 
   const ankiVersion = '26.08.1';
 
-  const winX64: Platform = {
+  const winX64: GithubPlatform = {
     name: 'Windows',
     arch: 'x64',
     version: '10+',
@@ -22,7 +27,7 @@
     downloadArch: 'x64',
     downloadExt: 'msi',
   };
-  const winArm: Platform = {
+  const winArm: GithubPlatform = {
     name: 'Windows',
     arch: 'ARM',
     version: '11',
@@ -30,7 +35,7 @@
     downloadArch: 'arm64',
     downloadExt: 'msi',
   };
-  const macApple: Platform = {
+  const macApple: GithubPlatform = {
     name: 'macOS',
     arch: 'Apple Silicon',
     version: '13+',
@@ -38,7 +43,7 @@
     downloadArch: 'apple',
     downloadExt: 'dmg',
   };
-  const macIntel: Platform = {
+  const macIntel: GithubPlatform = {
     name: 'macOS',
     arch: 'Intel',
     version: '13+',
@@ -46,7 +51,7 @@
     downloadArch: 'intel',
     downloadExt: 'dmg',
   };
-  const linuxX64: Platform = {
+  const linuxX64: GithubPlatform = {
     name: 'Linux',
     arch: 'x64',
     version: '2022+',
@@ -54,7 +59,7 @@
     downloadArch: 'x86_64',
     downloadExt: 'tar.zst',
   };
-  const linuxArm: Platform = {
+  const linuxArm: GithubPlatform = {
     name: 'Linux',
     arch: 'ARM',
     version: '2024+',
@@ -62,9 +67,29 @@
     downloadArch: 'aarch64',
     downloadExt: 'tar.zst',
   };
+  const Android: ExternalPlatform = {
+    name: 'Android',
+    url: 'https://play.google.com/store/apps/details?id=com.ichi2.anki',
+  };
+  const iOS: ExternalPlatform = {
+    name: 'iOS',
+    url: 'https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387',
+  };
 
   function buildDownloadURL(platform: Platform): string {
-    return `https://github.com/ankitects/anki/releases/download/${ankiVersion}/anki-${ankiVersion}-${platform.downloadOs}-${platform.downloadArch}.${platform.downloadExt}`;
+    if ('url' in platform) {
+      return platform.url;
+    } else {
+      return `https://github.com/ankitects/anki/releases/download/${ankiVersion}/anki-${ankiVersion}-${platform.downloadOs}-${platform.downloadArch}.${platform.downloadExt}`;
+    }
+  }
+
+  function buildDetectedText(platform: Platform): string {
+    if ('url' in platform) {
+      return platform.name;
+    } else {
+      return `${platform.name} (${platform.arch})`;
+    }
   }
 
   type NavigatorUAData = {
@@ -74,7 +99,9 @@
   async function detectPlatform(): Promise<[Platform, Snippet] | undefined> {
     const ua = navigator.userAgent;
 
-    if (/Android|iPhone|iPad|iPod/i.test(ua)) return undefined;
+    if (/iPhone|iPad|iPod/i.test(ua)) return [iOS, ankiMobileIcon];
+    if (/Android/i.test(ua)) return [Android, playStoreIcon];
+
     // iPadOS Safari reports itself as macOS
     if (/Mac/.test(ua) && navigator.maxTouchPoints > 1) return undefined;
 
@@ -151,6 +178,24 @@
   </svg>
 {/snippet}
 
+{#snippet ankiMobileIcon()}
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6">
+    <path
+      fill="currentColor"
+      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2M8.823 15.343q-.591-.716-1.479-.509l-.15.041l-.59 1.016a.823.823 0 0 0 1.366.916l.062-.093zM13.21 8.66c-.488.404-.98 1.597-.29 2.787l3.04 5.266a.824.824 0 0 0 1.476-.722l-.049-.1l-.802-1.392h1.19a.82.82 0 0 0 .822-.823a.82.82 0 0 0-.72-.816l-.103-.006h-2.14L13.44 9.057zm.278-3.044a.825.825 0 0 0-1.063.21l-.062.092l-.367.633l-.359-.633a.824.824 0 0 0-1.476.722l.049.1l.838 1.457l-2.685 4.653H6.266a.82.82 0 0 0-.822.822c0 .421.312.766.719.817l.103.006h7.48c.34-.64-.06-1.549-.81-1.638l-.121-.007h-2.553l3.528-6.11a.823.823 0 0 0-.302-1.124"
+    />
+  </svg>
+{/snippet}
+
+{#snippet playStoreIcon()}
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="size-6">
+    <path
+      fill="currentColor"
+      d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256L55.37 56.42A4.33 4.33 0 0 0 48 59.49M345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06l201.13 192.32ZM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-57.95ZM449.38 231l-71.65-39.46L310.36 256l67.37 64.43L449.38 281c19.49-10.77 19.49-39.23 0-50"
+    />
+  </svg>
+{/snippet}
+
 <section class="relative z-1 mx-auto w-[min(100%,986px)] pt-12">
   <DualHeader title="downloads">
     {#snippet subtitle()}
@@ -165,17 +210,21 @@
       </p>
 
       {#if typeof detected !== 'undefined'}
+        {@const [platform, icon] = detected}
+
         <div class="flex flex-col items-center gap-3 mt-8">
           <p class="font-medium text-xs text-neutral-400 uppercase">
-            Detected: {detected[0].name} ({detected[0].arch})
+            Detected: {buildDetectedText(platform)}
           </p>
           <a
-            href={buildDownloadURL(detected[0])}
+            href={buildDownloadURL(platform)}
             class="flex gap-1 items-center rounded-[2rem] px-6 py-4 font-semibold tracking-tight transition-all duration-100 ease-out bg-gradient-to-r from-primary-darker to-primary text-background hover:opacity-80"
           >
-            {@render detected[1]()}
-            Download for {detected[0].name}
-            {detected[0].version}
+            {@render icon()}
+            Download for {platform.name}
+            {#if 'version' in platform}
+              {platform.version}
+            {/if}
           </a>
           <p class="font-medium text-xs">Not your platform? See all options below</p>
         </div>
@@ -330,15 +379,10 @@
           <h4 class="font-medium text-xl">iOS</h4>
           <div class="flex flex-col items-end gap-3">
             <a
-              href={'https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387'}
+              href={buildDownloadURL(iOS)}
               class="flex items-center gap-1 text-base font-medium text-right md:text-xl text-primary hover:opacity-60"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6">
-                <path
-                  fill="currentColor"
-                  d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2M8.823 15.343q-.591-.716-1.479-.509l-.15.041l-.59 1.016a.823.823 0 0 0 1.366.916l.062-.093zM13.21 8.66c-.488.404-.98 1.597-.29 2.787l3.04 5.266a.824.824 0 0 0 1.476-.722l-.049-.1l-.802-1.392h1.19a.82.82 0 0 0 .822-.823a.82.82 0 0 0-.72-.816l-.103-.006h-2.14L13.44 9.057zm.278-3.044a.825.825 0 0 0-1.063.21l-.062.092l-.367.633l-.359-.633a.824.824 0 0 0-1.476.722l.049.1l.838 1.457l-2.685 4.653H6.266a.82.82 0 0 0-.822.822c0 .421.312.766.719.817l.103.006h7.48c.34-.64-.06-1.549-.81-1.638l-.121-.007h-2.553l3.528-6.11a.823.823 0 0 0-.302-1.124"
-                />
-              </svg>
+              {@render ankiMobileIcon()}
               <span>AnkiMobile</span>
             </a>
           </div>
@@ -347,15 +391,10 @@
           <h4 class="font-medium text-xl">Android</h4>
           <div class="flex flex-col items-end gap-3">
             <a
-              href={'https://play.google.com/store/apps/details?id=com.ichi2.anki'}
+              href={buildDownloadURL(Android)}
               class="flex items-center gap-1 text-base font-medium text-right md:text-xl text-primary hover:opacity-60"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="size-6">
-                <path
-                  fill="currentColor"
-                  d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256L55.37 56.42A4.33 4.33 0 0 0 48 59.49M345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06l201.13 192.32ZM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-57.95ZM449.38 231l-71.65-39.46L310.36 256l67.37 64.43L449.38 281c19.49-10.77 19.49-39.23 0-50"
-                />r
-              </svg>
+              {@render playStoreIcon()}
               <span>AnkiDroid</span>
             </a>
           </div>
