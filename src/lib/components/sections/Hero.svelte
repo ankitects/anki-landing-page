@@ -1,7 +1,7 @@
 <div class="relative z-1 mx-auto w-[min(100%,986px)] min-h-64">
   <div class="pt-0 pb-5 px-0">
     <a
-      href="https://docs.ankiweb.net/background.html"
+      href="https://docs.ankiweb.net/manual/background"
       aria-label="Anki Manual: Background"
       class="text-sm tracking-tight inline-flex items-center gap-2 rounded-[6rem] bg-subtle-surface w-fit px-3 py-1.5 hover:opacity-80"
     >

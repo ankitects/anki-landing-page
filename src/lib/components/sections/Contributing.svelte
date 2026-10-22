@@ -19,13 +19,13 @@
       title: 'share decks',
       description:
         "Sharing your deck can make it easier for others to start learning what you're studying.",
-      href: 'https://docs.ankiweb.net/contrib#sharing-decks-publicly',
+      href: 'https://docs.ankiweb.net/manual/contrib#sharing-decks-publicly',
     },
     {
       title: 'translate anki',
       description:
         'Help with the efforts to translate Anki so it can become more accessible to everyone.',
-      href: 'https://translating.ankiweb.net/intro.html',
+      href: 'https://docs.ankiweb.net/translators/intro',
     },
   ];
 </script>

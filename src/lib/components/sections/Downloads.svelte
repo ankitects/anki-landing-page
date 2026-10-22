@@ -201,7 +201,7 @@
     {#snippet subtitle()}
       <p>
         Choose the correct download for your platform. For details, see the <a
-          href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
+          href="https://docs.ankiweb.net/manual/getting-started#installing-&-upgrading"
           aria-label="Anki Manual: Installing and Upgrading"
           class="text-primary hover:opacity-80"
         >
@@ -314,7 +314,7 @@
         class="col-span-1 md:col-span-12 flex flex-col md:flex-row md:items-center md:justify-center md:gap-8 mt-[max(3dvw,_2em)]"
       >
         <a
-          href="https://docs.ankiweb.net/getting-started.html#installing--upgrading"
+          href="https://docs.ankiweb.net/manual/getting-started#installing-&-upgrading"
           class="flex items-center gap-1 w-fit font-medium text-primary hover:opacity-60"
         >
           Installation Guide
