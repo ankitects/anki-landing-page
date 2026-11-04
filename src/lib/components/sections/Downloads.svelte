@@ -17,7 +17,7 @@
   };
   type Platform = GithubPlatform | ExternalPlatform;
 
-  const ankiVersion = '26.09.3';
+  const ankiVersion = '26.09.4';
 
   const winX64: GithubPlatform = {
     name: 'Windows',
