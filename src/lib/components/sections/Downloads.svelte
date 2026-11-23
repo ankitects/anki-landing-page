@@ -75,6 +75,7 @@
     name: 'iOS',
     url: 'https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387',
   };
+  const FlathubUrl = 'https://flathub.org/en/apps/net.ankiweb.Anki';
 
   function buildDownloadURL(platform: Platform): string {
     if ('url' in platform) {
@@ -306,6 +307,13 @@
             >
               {@render downloadIcon()}
               <span class="my-2">{linuxArm.name} {linuxArm.version} ({linuxArm.arch})</span>
+            </a>
+            <a
+              href={FlathubUrl}
+              class="flex items-center gap-1 text-base font-medium text-right md:text-xl text-primary hover:opacity-60"
+            >
+              {@render downloadIcon()}
+              <span class="my-2">Flathub (x64/ARM)</span>
             </a>
           </div>
         </div>
